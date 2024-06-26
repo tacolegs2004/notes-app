@@ -1,5 +1,4 @@
 "use client";
-
 import { useRouter } from "next/navigation";
 import { useState } from "react";
 
@@ -22,18 +21,18 @@ export function CreateNote() {
         e.preventDefault();
         createNote.mutate({ noteTitle });
       }}
-      className="flex flex-col gap-2 mr-4 w-full"
+      className="mr-4 mt-2 flex w-full flex-col gap-2"
     >
       <input
         type="text"
         placeholder="Title"
         value={noteTitle}
         onChange={(e) => setNoteTitle(e.target.value)}
-        className=""
+        className="w-64 rounded-md p-1 text-black"
       />
       <button
         type="submit"
-        className=""
+        className="text-white"
         disabled={createNote.isLoading}
       >
         {createNote.isLoading ? "Submitting..." : "Submit"}
